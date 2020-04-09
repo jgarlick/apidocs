@@ -76,6 +76,7 @@ html, body {
     display: block;
     max-width: 100%;
     margin-bottom: $logo-margin;
+    padding: 14px 18px;
   }
 
   &>.search {
@@ -450,7 +451,7 @@ html, body {
 
   code {
     background-color: rgba(0,0,0,0.05);
-    padding: 3px;
+    padding: 1px 4px;
     border-radius: 3px;
     @extend %break-words;
     @extend %code-font;
@@ -612,4 +613,37 @@ html, body {
 
 .highlight, .highlight .w {
   background-color: $code-bg;
+}
+.highlight {
+  pre {color: #888;}
+  .s2 {color: #2CA173;}
+  .nl {color: #eee; background-color: transparent;}
+  .mi,.mf {color: #E57653;}
+}
+
+ul.attributes {
+  list-style: none; padding-left: 28px;
+  
+  li {
+//    background-color: white;
+    border-top: 1px solid #DEE3E5;
+    margin: 0;
+    padding: 14px 0;    
+  }
+  .child-attributes {
+    margin-top: 10px;
+    background-color: #FDFDFE; border: 1px solid #DEE3E5; border-radius: 14px; padding: 0;
+    h4 {font-size: 13px; margin: 0; padding: 12px 24px;}
+    ul {list-style: none; padding-left: 0;}
+    li {padding: 9px 24px;}
+    
+  }
+  h3 {font-size: 14px; margin-top: 0; margin-bottom: 3px;}
+//  .name {padding: 3px 6px; border: 1px solid #eee; border-radius: 3px; color: #18A76F; background-color: #f8f8f8;}
+  .name {color: #1D2224; @extend %code-font;}
+  .parent-name {color: #889199; @extend %code-font;}
+  .type {font-size: 13px; color: #2CA173;}
+  .type.li {color: #3F99DC;}
+  .type.ha {color: #AC3FDC;}
+  .type.mi,.type.mf {color: #E57653;}
 }
