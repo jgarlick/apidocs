@@ -25,10 +25,6 @@ search: false
 
 Welcome to the Orderspace API reference. This document contains everything needed to access and use the API. 
 
-<aside class="notice">
-	Our API is currently in Beta. Breaking changes may be necessary but we will try to keep these to a minimum. If the API does not yet support something you need, contact us at support at orderspace.com and let us know your requirements.
-</aside>
-
 ## Getting Started
 
 To get started, contact us to enable API Access on your Orderspace site.
