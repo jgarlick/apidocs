@@ -48,6 +48,7 @@ html, body {
 }
 
 .toc-wrapper {
+  font-family: museo-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   transition: left 0.3s ease-in-out;
 
   overflow-y: auto;
@@ -59,7 +60,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
 
   // language selector for mobile devices
@@ -75,8 +76,10 @@ html, body {
   .logo {
     display: block;
     max-width: 100%;
+    width: 152px;
+// height: 27px;
     margin-bottom: $logo-margin;
-    padding: 14px 18px;
+    padding: 14px 14px 13px;
   }
 
   &>.search {
@@ -142,7 +145,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 2.5;
   }
 
   li {
@@ -172,7 +175,7 @@ html, body {
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .toc-footer {
@@ -352,8 +355,8 @@ html, body {
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #E8E9EC;
+    border-bottom: 1px solid #E8E9EC;
     background-color: #fdfdfd;
   }
 
@@ -367,7 +370,7 @@ html, body {
     font-size: 19px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #E8E9EC;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
@@ -467,6 +470,7 @@ html, body {
     padding-bottom: 1em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
+    color: #0074CC;
     background: $aside-notice-bg;
     line-height: 1.6;
 
@@ -512,6 +516,10 @@ html, body {
 // This is all the stuff that appears in the right half of the page
 
 .content {
+  &>div.highlight {
+    clear:none;
+  }
+  
   pre, blockquote {
     background-color: $code-bg;
     color: #fff;
@@ -645,5 +653,6 @@ ul.attributes {
   .type {font-size: 13px; color: #2CA173;}
   .type.li {color: #3F99DC;}
   .type.ha {color: #AC3FDC;}
-  .type.mi,.type.mf {color: #E57653;}
+  .type.number {color: #E57653;}
+  .optional {font-size: 13px; color: #888;}
 }
