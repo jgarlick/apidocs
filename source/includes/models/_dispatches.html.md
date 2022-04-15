@@ -17,17 +17,23 @@ Dispatches represent items being fulfilled
     "dispatch_lines": [
       {
         "order_line_id": "ol_z1ow2pdm", 
-        "sku": "ZAG-D-16", 
+        "sku": "ZAG-D-16",
+        "name": "Angelica Dress",
+        "options": "Size: 16",
         "quantity": 1
       },
       {
         "order_line_id": "ol_nm427o01", 
         "sku": "ZAG-D-18", 
+        "name": "Angelica Dress",
+        "options": "Size: 18",
         "quantity": 2
       },
       {
         "order_line_id": "ol_pmvznz21", 
         "sku": "ZAG-D-20", 
+        "name": "Angelica Dress",
+        "options": "Size: 20",
         "quantity": 3
       },
     ]	
@@ -51,15 +57,23 @@ Dispatches represent items being fulfilled
 				<h4>Child Attributes</h4>
 				<ul>
 					<li>
-						<h3><span class="name">order_line_id</span> <span class="type">string</span></h3>
+						<h3><span class="parent-name">dispatch_line.</span><span class="name">order_line_id</span> <span class="type">string</span></h3>
 						<div class="description">Internal identifier for the order line being dispatched</div>
 					</li>
 					<li>
-						<h3><span class="name">sku</span> <span class="type">string</span></h3>
+						<h3><span class="parent-name">dispatch_line.</span><span class="name">sku</span> <span class="type">string</span></h3>
 						<div class="description">The SKU of the item being dispatched</div>
 					</li>
 					<li>
-						<h3><span class="name">quantity</span> <span class="type number">number</span></h3>
+						<h3><span class="parent-name">dispatch_line.</span><span class="name">name</span> <span class="type">string</span></h3>
+						<div class="description">The name of the item being dispatched</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">dispatch_line.</span><span class="name">options</span> <span class="type">string</span></h3>
+						<div class="description">The options (size/color etc) of the item being dispatched</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">dispatch_line.</span><span class="name">quantity</span> <span class="type number">number</span></h3>
 						<div class="description">The number of items being dispatched</div>
 					</li>
 				</ul>
@@ -104,16 +118,22 @@ curl -X POST "https://api.orderspace.com/v1/dispatches" \
       {
         "order_line_id": "ol_z1ow2pdm", 
         "sku": "ZAG-D-16", 
+        "name": "Angelica Dress",
+        "options": "Size: 16",
         "quantity": 1
       },
       {
         "order_line_id": "ol_nm427o01", 
         "sku": "ZAG-D-18", 
+        "name": "Angelica Dress",
+        "options": "Size: 18",
         "quantity": 2
       },
       {
         "order_line_id": "ol_pmvznz21", 
         "sku": "ZAG-D-20", 
+        "name": "Angelica Dress",
+        "options": "Size: 20",
         "quantity": 3
       },
     ]	
@@ -167,16 +187,22 @@ curl -X GET https://api.orderspace.com/v1/dispatches \
         {
           "order_line_id": "ol_z1ow2pdm", 
           "sku": "ZAG-D-16", 
+          "name": "Angelica Dress",
+          "options": "Size: 16",
           "quantity": 1
         },
         {
           "order_line_id": "ol_nm427o01", 
-          "sku": "ZAG-D-16", 
+          "sku": "ZAG-D-18", 
+          "name": "Angelica Dress",
+          "options": "Size: 18",
           "quantity": 2
 				},
         {
           "order_line_id": "ol_pmvznz21", 
-          "sku": "ZAG-D-18", 
+          "sku": "ZAG-D-20", 
+          "name": "Angelica Dress",
+          "options": "Size: 20",
           "quantity": 3
         }
       ]	
@@ -239,16 +265,22 @@ curl -X GET https://api.orderspace.com/v1/dispaches/di_4kzzxdk2 \
       {
         "order_line_id": "ol_z1ow2pdm", 
         "sku": "ZAG-D-16", 
+        "name": "Angelica Dress",
+        "options": "Size: 16",
         "quantity": 1
       },
       {
         "order_line_id": "ol_nm427o01", 
         "sku": "ZAG-D-18", 
+        "name": "Angelica Dress",
+        "options": "Size: 18",
         "quantity": 2
       },
       {
         "order_line_id": "ol_pmvznz21", 
         "sku": "ZAG-D-20", 
+        "name": "Angelica Dress",
+        "options": "Size: 20",
         "quantity": 3
       },
     ]	
