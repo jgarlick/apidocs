@@ -63,10 +63,10 @@
         "tax_name": "Standard",
         "tax_rate": 20.0,
         "tax_amount": 60.0,
-				"on_hold": false,
-				"invoiced": 0,
-				"paid": 0,
-				"dispatched": 0
+        "on_hold": false,
+        "invoiced": 0,
+        "paid": 0,
+        "dispatched": 0
       }
     ],
     "currency": "GBP",	
@@ -311,7 +311,7 @@
 						<div class="description">The total tax applied to this order line</div>
 					</li>				
 					<li>
-						<h3><span class="parent-name">order_line.</span><span class="name">on_hold</span> <span class="type number">boolean</span></h3>
+						<h3><span class="parent-name">order_line.</span><span class="name">on_hold</span> <span class="type">boolean</span></h3>
 						<div class="description">Indicates whether the items are on hold. If set to true, the items are preorders that should not have stock allocated to them or be fulfilled</div>
 					</li>				
 					<li>
@@ -417,10 +417,10 @@ curl -X GET https://api.orderspace.com/v1/orders \
           "tax_name": "Standard",
           "tax_rate": 20.0,
           "tax_amount": 60.0,
-					"on_hold": false,
-					"invoiced": 0,
-					"paid": 0,
-					"dispatched": 0
+          "on_hold": false,
+          "invoiced": 0,
+          "paid": 0,
+          "dispatched": 0
         }
       ],
       "currency": "GBP",	
@@ -560,10 +560,10 @@ curl -X GET https://api.orderspace.com/v1/orders/or_l5DYqeDn \
         "tax_name": "Standard",
         "tax_rate": 20.0,
         "tax_amount": 60.0,
-				"on_hold": false,
-				"invoiced": 0,
-				"paid": 0,
-				"dispatched": 0				
+        "on_hold": false,
+        "invoiced": 0,
+        "paid": 0,
+        "dispatched": 0				
       }
     ],
     "currency": "GBP",	
