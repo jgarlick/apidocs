@@ -19,11 +19,17 @@ includes:
   - models/_tax_rates.html.md
 
 search: false
+
+code_clipboard: true
+
+meta:
+  - name: description
+    content: Documentation for the Orderspace API
 ---
 
 # Orderspace API
 
-Welcome to the Orderspace API reference. This document contains everything needed to access and use the API. 
+Welcome to the Orderspace API reference. This document contains everything needed to access and use the API.
 
 ## Getting Started
 
@@ -31,7 +37,7 @@ To get started, contact us to enable API Access on your Orderspace site.
 
 Once enabled, add an App from the Apps section of the Orderspace admin to provide access to the API.
 
-The Orderspace API supports two types of App, Private and Public. 
+The Orderspace API supports two types of App, Private and Public.
 
 ### Private Apps
 
@@ -45,7 +51,7 @@ Support for public apps is still under development and will be available soon. I
 
 ## Request/Response Format
 
-The Orderspace API is organised around REST using predicatable resource-oriented URLS and standard HTTP response codes. 
+The Orderspace API is organised around REST using predicatable resource-oriented URLS and standard HTTP response codes.
 
 The base URL for all API requests is <code>https://api.orderspace.com/v1/</code>
 
@@ -102,7 +108,7 @@ curl -X POST https://identity.orderspace.com/oauth/token \
 
 ```json
 {
-	"access_token": "WUECFd_Z1G02cxcKt2rFOy-Tn-zOAbjrCKUJB5S264U", 
+	"access_token": "WUECFd_Z1G02cxcKt2rFOy-Tn-zOAbjrCKUJB5S264U",
 	"token_type": "Bearer",
 	"expires_in": 1800,
 	"scope": "read write"
@@ -113,7 +119,7 @@ curl -X POST https://identity.orderspace.com/oauth/token \
 
 ```shell
 curl https://api.orderspace.com/v1/customers \
--H "Authorization: Bearer WUECFd_Z1G02cxcKt2rFOy-Tn-zOAbjrCKUJB5S264U" 
+-H "Authorization: Bearer WUECFd_Z1G02cxcKt2rFOy-Tn-zOAbjrCKUJB5S264U"
 ```
 
 Private Apps are authenticated using the OAuth2 Client Credentials grant flow.
