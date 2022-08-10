@@ -125,15 +125,17 @@ Retrieve a list of webhooks. Webhooks are returned in the order they are created
 
 ## Events
 
+Webhooks may contain up to 50 different events.
+
 ### customer.created
 > Example customer.created webhook request
 
 ```json-doc
-{
-  "event": "customer.created",
-  "data": {
-    "customers": [
-      {
+[
+  {
+    "event": "customer.created",
+    "data": {
+      "customer": {
         "id": "cu_dnwz8gnx",
         "company_name": "Blue Sky",
         "created_at": "2021-03-09T13:08:51Z",
@@ -169,47 +171,47 @@ Retrieve a list of webhooks. Webhooks are returned in the order they are created
         "payment_terms_id": "pt_zkmqv8e0",
         "customer_group_id": "cg_w2n6ln8v",
         "price_list_id": "pr_3715yj58"
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a customer is created. Could contain up to 50 customers
+Triggered when a customer is created.
 
 ### customer.deleted
 > Example customer.deleted webhook request
 
 ```json-doc
-{
-  "event": "customer.deleted",
-  "data": {
-    "customers": [
-      {
+[
+  {
+    "event": "customer.deleted",
+    "data": {
+      "customer": {
         "id": "cu_dnwz8gnx",
         "company_name": "Blue Sky",
         "deleted": true
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a customer is deleted. Could contain up to 50 customers
+Triggered when a customer is deleted.
 
 ### customer.updated
 > Example customer.updated webhook request
 
 ```json-doc
-{
-  "event": "customer.updated",
-  "data": {
-    "customers": [
-      {
+[
+  {
+    "event": "customer.updated",
+    "data": {
+      "customer": {
         "id": "cu_dnwz8gnx",
         "company_name": "Blue Sky",
         "created_at": "2021-03-09T13:08:51Z",
@@ -245,25 +247,25 @@ Triggered when a customer is deleted. Could contain up to 50 customers
         "payment_terms_id": "pt_zkmqv8e0",
         "customer_group_id": "cg_w2n6ln8v",
         "price_list_id": "pr_3715yj58"
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a customer is updated. Could contain up to 50 customers
+Triggered when a customer is updated.
 
 ### dispatch.created
 > Example dispatch.created webhook request
 
 ```json-doc
-{
-  "event": "dispatch.created",
-  "data": {
-    "dispatches": [
-      {
+[
+  {
+    "event": "dispatch.created",
+    "data": {
+      "dispatch": {
         "id": "di_4kzzxdk2",
         "order_id": "or_wlvzog4g",
         "order_number": 1289,
@@ -292,50 +294,52 @@ Triggered when a customer is updated. Could contain up to 50 customers
             "quantity": 3
           },
         ]
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a dispatch is created. Could contain up to 50 dispatches
+Triggered when a dispatch is created.
 
 ### inventory_level.updated
 > Example inventory_level.updated webhook request
 
 ```json-doc
-{
-  "event": "inventory_level.updated",
-  "data": {
-    "inventory_levels": [
-      {
-        "sku": "AD01-10",
-        "on_hand": 20.0,
-        "on_hand_adjustment": 10.0,
-        "available": 20.0,
-        "available_adjustment": 10.0
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+[
+  {
+    "event": "inventory_level.updated",
+    "data": {
+      "inventory_levels": [
+        {
+          "sku": "AD01-10",
+          "on_hand": 20.0,
+          "on_hand_adjustment": 10.0,
+          "available": 20.0,
+          "available_adjustment": 10.0
+        }
+      ]
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a inventory_level is updated. Could contain up to 50 inventory level updates
+Triggered when an inventory_level is updated.
 
 
 ### invoice.created
 > Example invoice.created webhook request
 
 ```json-doc
-{
-  "event": "invoice.created",
-  "data": {
-    "invoices": [
-      {
+[
+  {
+    "event": "invoice.created",
+    "data": {
+      "invoice": {
         "id": "iv_7xg471xv",
         "number": "INV-1288",
         "invoice_date": "2021-04-24",
@@ -391,46 +395,46 @@ Triggered when a inventory_level is updated. Could contain up to 50 inventory le
             "reference": "pi_1IjW8KJzxI5C4d4qXkHyOFKZ"
           }
         ]
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
-Triggered when an invoice is created. Could contain up to 50 invoices
+Triggered when an invoice is created.
 
 ### invoice.deleted
 > Example invoice.deleted webhook request
 
 ```json-doc
-{
-  "event": "invoice.deleted",
-  "data": {
-    "invoices": [
-      {
+[
+  {
+    "event": "invoice.deleted",
+    "data": {
+      "invoice": {
         "id": "iv_7xg471xv",
         "number": "INV-1288",
         "deleted": true
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when an invoice is deleted. Could contain up to 50 invoices
+Triggered when an invoice is deleted.
 
 ### payment.created
 > Example payment.created webhook request
 
 ```json-doc
-{
-  "event": "payment.created",
-  "data": {
-    "payments": [
-      {
+[
+  {
+    "event": "payment.created",
+    "data": {
+      "payment": {
         "invoice_id": "iv_7xg471xv",
         "invoice_number": "INV-1288",
         "amount": 26.7,
@@ -438,25 +442,25 @@ Triggered when an invoice is deleted. Could contain up to 50 invoices
         "source": "card",
         "description": "Visa ending 3220",
         "reference": "pi_1IjW8KJzxI5C4d4qXkHyOFKZ"
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a payment is created on an invoice. Cound contain up to 50 payments
+Triggered when a payment is created on an invoice.
 
 ### product.created
 > Example product.created webhook request
 
 ```json-doc
-{
-  "event": "product.created",
-  "data": {
-    "products": [
-      {
+[
+  {
+    "event": "product.created",
+    "data": {
+      "product":{
         "id": "pr_lj3pwm1n",
         "code": "AD01",
         "name": "Alexa Dress",
@@ -520,48 +524,48 @@ Triggered when a payment is created on an invoice. Cound contain up to 50 paymen
           }
         ],
         "grouping_category_id": "ca_x61lk8j7"
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a product is created. Could contain up to 50 products
+Triggered when a product is created.
 
 ### product.deleted
 > Example product.deleted webhook request
 
 ```json-doc
-{
-  "event": "product.deleted",
-  "data": {
-    "products": [
-      {
+[
+  {
+    "event": "product.deleted",
+    "data": {
+      "product": {
         "id": "pr_lj3pwm1n",
         "code": "AD01",
         "name": "Alexa Dress",
         "deleted": true
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a product is deleted. Could contain up to 50 products
+Triggered when a product is deleted.
 
 ### product.updated
 > Example product.updated webhook request
 
 ```json-doc
-{
-  "event": "product.updated",
-  "data": {
-    "products": [
-      {
+[
+  {
+    "event": "product.updated",
+    "data": {
+      "product": {
         "id": "pr_lj3pwm1n",
         "code": "AD01",
         "name": "Alexa Dress",
@@ -625,25 +629,25 @@ Triggered when a product is deleted. Could contain up to 50 products
           }
         ],
         "grouping_category_id": "ca_x61lk8j7"
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when a product is updated. Could contain up to 50 products
+Triggered when a product is updated.
 
 ### order.created
 > Example order.created webhook request
 
 ```json-doc
-{
-  "event": "order.created",
-  "data": {
-    "orders": [
-      {
+[
+  {
+    "event": "order.created",
+    "data": {
+      "order": {
         "id": "or_l5DYqeDn",
         "number": 1204,
         "created": "2020-04-08T15:03:55Z",
@@ -709,47 +713,47 @@ Triggered when a product is updated. Could contain up to 50 products
         "currency": "GBP",
         "net_total": 306.1,
         "gross_total": 366.1
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when an order is created. Could contain up to 50 orders
+Triggered when an order is created.
 
 ### order.deleted
 > Example order.deleted webhook request
 
 ```json-doc
-{
-  "event": "order.deleted",
-  "data": {
-    "orders": [
-      {
+[
+  {
+    "event": "order.deleted",
+    "data": {
+      "order": {
         "id": "or_l5DYqeDn",
         "number": 1204,
         "deleted": true
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when an order is deleted. Could contain up to 50 orders
+Triggered when an order is deleted.
 
 ### order.updated
 > Example order.updated webhook request
 
 ```json-doc
-{
-  "event": "order.updated",
-  "data": {
-    "orders": [
-      {
+[
+  {
+    "event": "order.updated",
+    "data": {
+      "order": {
         "id": "or_l5DYqeDn",
         "number": 1204,
         "created": "2020-04-08T15:03:55Z",
@@ -815,12 +819,12 @@ Triggered when an order is deleted. Could contain up to 50 orders
         "currency": "GBP",
         "net_total": 306.1,
         "gross_total": 366.1
-      },
-      {...},
-      {...}
-    ]
-  }
-}
+      }
+    }
+  },
+  {...},
+  {...}
+]
 ```
 
-Triggered when an order is updated. Could contain up to 50 orders
+Triggered when an order is updated.
