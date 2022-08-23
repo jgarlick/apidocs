@@ -312,15 +312,13 @@ Triggered when a dispatch is created.
   {
     "event": "inventory_level.updated",
     "data": {
-      "inventory_levels": [
-        {
-          "sku": "AD01-10",
-          "on_hand": 20.0,
-          "on_hand_adjustment": 10.0,
-          "available": 20.0,
-          "available_adjustment": 10.0
-        }
-      ]
+      "inventory_level": {
+        "sku": "AD01-10",
+        "on_hand": 20.0,
+        "on_hand_adjustment": 10.0,
+        "available": 20.0,
+        "available_adjustment": 10.0
+      }
     }
   },
   {...},
