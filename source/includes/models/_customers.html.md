@@ -194,7 +194,6 @@ curl -X POST https://api.orderspace.com/v1/customers \
   -d '{
   "customer": {
     "company_name": "Blue Sky",
-    "status": "active",
     "reference": "",
     "buyers": [
       {
