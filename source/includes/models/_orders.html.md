@@ -60,9 +60,11 @@
         "quantity": 10,
         "unit_price": 30.0,
         "sub_total": 300.0,
+        "tax_rate_id": "tr_qk85g0k7",
         "tax_name": "Standard",
         "tax_rate": 20.0,
         "tax_amount": 60.0,
+        "preorder_window_id": "",
         "on_hold": false,
         "invoiced": 0,
         "paid": 0,
@@ -299,6 +301,10 @@
 						<div class="description">The line sub-total excluding tax</div>
 					</li>				
 					<li>
+						<h3><span class="parent-name">order_line.</span><span class="name">tax_rate_id</span> <span class="type">string</span></h3>
+						<div class="description">The id of the tax rate applied to this order line</div>
+					</li>
+					<li>
 						<h3><span class="parent-name">order_line.</span><span class="name">tax_name</span> <span class="type">string</span></h3>
 						<div class="description">The name of the tax rate applied to this order line</div>
 					</li>				
@@ -310,6 +316,10 @@
 						<h3><span class="parent-name">order_line.</span><span class="name">tax_amount</span> <span class="type number">number</span></h3>
 						<div class="description">The total tax applied to this order line</div>
 					</li>				
+					<li>
+						<h3><span class="parent-name">order_line.</span><span class="name">preorder_window_id</span> <span class="type">string</span></h3>
+						<div class="description">The id of the preorder window applied to this order line. If set, items are preorders that should not have stock allocated to them or be fulfilled until they are released</div>
+					</li>
 					<li>
 						<h3><span class="parent-name">order_line.</span><span class="name">on_hold</span> <span class="type">boolean</span></h3>
 						<div class="description">Indicates whether the items are on hold. If set to true, the items are preorders that should not have stock allocated to them or be fulfilled</div>
@@ -343,6 +353,187 @@
 		<div class="description">The total cost of all items on the order including tax</div>
 	</li>
 </ul>
+
+## Create an order
+
+> Example request with curl
+
+```shell
+curl -X POST "https://api.orderspace.com/v1/dispatches" \
+  -H "Authorization: Bearer {ACCESS TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "order": {
+      "number": 1204,
+      "customer_id": "cu_m3xgel1w",
+      "phone": "07911 123456",
+      "delivery_date": "2022-09-13",
+      "reference": "test reference",
+      "internal_note": "test internal note",
+      "customer_po_number": "test customer po number",
+      "customer_note": "test customer note",
+      "shipping_address": {
+        "company_name": "Sample Customer",
+        "contact_name": "",
+        "line1": "34 Edgar Buildings",
+        "line2": "George Street",
+        "city": "Bath",
+        "state": "",
+        "postal_code": "BA1 2FJ",
+        "country": "GB"
+      },
+      "billing_address": {
+        "company_name": "Sample Customer",
+        "contact_name": "",
+        "line1": "336 Hargrave Rd",
+        "line2": "Windsor",
+        "city": "New York",
+        "state": "NY",
+        "postal_code": "13865",
+        "country": "US"
+      },
+      "order_lines": [
+        { "sku": "TC01-BLU-S", "quantity": 9 },
+        { "name": "Custom Item Name", quantity: 10, unit_price: 2.00, tax_rate_id: "tr_ruo96bhf" },
+        { "name": "Special Delivery", "unit_price": 4.9, "shipping": true },
+        {...},
+        {...}
+      ]
+    }
+  }'
+```
+
+> Example HTTP 200 success response
+
+```json-doc
+{
+	"order": {
+    "id": "or_v8zqdw8r",
+    "number": 1204,
+    "created": "2022-09-13T08:03:33Z",
+    "status": "new",
+    "customer_id": "cu_m3xgel1w",
+    "company_name": "T1C1 Ltd",
+    "phone": "0115 2781234",
+    "email_addresses": {
+      "orders": "test_customer1@orderspace.com",
+      "dispatches": "test_customer1@orderspace.com",
+      "invoices": "test_customer1@orderspace.com"
+    },
+    "delivery_date": "2022-09-15",
+    "reference": "test reference",
+    "internal_note": "test internal note",
+    "customer_po_number": "test customer po number",
+    "customer_note": "test customer note",
+    "shipping_type": "Special Delivery",
+    "shipping_address": {
+      "company_name": "Sample Customer",
+      "contact_name": "",
+      "line1": "34 Edgar Buildings",
+      "line2": "George Street",
+      "city": "Bath",
+      "state": "",
+      "postal_code": "BA1 2FJ",
+      "country": "GB"
+    },
+    "billing_address": {
+      "company_name": "Sample Customer",
+      "contact_name": "",
+      "line1": "336 Hargrave Rd",
+      "line2": "Windsor",
+      "city": "New York",
+      "postal_code": "13865",
+      "state": "NY",
+      "country": "US"
+    },
+    "order_lines": [
+      {
+        "id": "ol_z1o7jxrp",
+        "sku": "TC01-BLU-S",
+        "name": "Trench Coat",
+        "options": "Colour: Blue, Size: Small",
+        "shipping": false,
+        "quantity": 9,
+        "unit_price": 1.1,
+        "sub_total": 9.9,
+        "tax_rate_id": "tr_qk85g0k7",
+        "tax_name": "Standard",
+        "tax_rate": 20.0,
+        "tax_amount": 1.98,
+        "preorder_window_id": "",
+        "on_hold": false,
+        "invoiced": 0,
+        "paid": 0,
+        "dispatched": 0
+      },
+      {
+        "id": "ol_fhb69our",
+        "sku": "",
+        "name": "Custom Item",
+        "options": "",
+        "shipping": false,
+        "quantity": 10,
+        "unit_price": 2.0,
+        "sub_total": 20.0,
+        "tax_rate_id": "tr_ruo96bhf",
+        "tax_name": "Reduced",
+        "tax_rate": 5.0,
+        "tax_amount": 1.0,
+        "preorder_window_id": "",
+        "on_hold": false,
+        "invoiced": 0,
+        "paid": 0,
+        "dispatched": 0
+      },
+      {
+        "id": "ol_9mq3971w",
+        "sku": "",
+        "name": "International Courier Delivery",
+        "options": "",
+        "shipping": true,
+        "quantity": 1,
+        "unit_price": 4.9,
+        "sub_total": 4.9,
+        "tax_rate_id": "tr_qk85g0k7",
+        "tax_name": "Standard",
+        "tax_rate": 20.0,
+        "tax_amount": 0.98,
+        "preorder_window_id": "",
+        "on_hold": false,
+        "invoiced": 0,
+        "paid": 0,
+        "dispatched": 0
+      },
+      {...},
+      {...}
+    ],
+    "currency": "GBP",
+    "net_total": 274.95,
+    "gross_total": 322.28
+  }
+}
+```
+
+> Example HTTP 422 error response
+
+```json-doc
+{
+  "message": "TC02-BLU-S - No longer available,TC02-BLU-M - No longer available"}
+}
+```
+
+Create an order.
+
+### HTTP Request
+
+<code>POST https://api.orderspace.com/v1/orders</code>
+
+### Response
+
+`HTTP 200 Success` - The order object in JSON format
+
+`HTTP 422 Unprocessable Entity` - A message describing the errors
+
 
 ## List orders
 
@@ -414,9 +605,11 @@ curl -X GET https://api.orderspace.com/v1/orders \
           "quantity": 10,
           "unit_price": 30.0,
           "sub_total": 300.0,
+          "tax_rate_id": "tr_qk85g0k7"
           "tax_name": "Standard",
           "tax_rate": 20.0,
           "tax_amount": 60.0,
+          "preorder_window_id": "",
           "on_hold": false,
           "invoiced": 0,
           "paid": 0,
