@@ -17,6 +17,7 @@ includes:
   - models/_price_lists.html.md
   - models/_payment_terms.html.md
   - models/_tax_rates.html.md
+  - models/_preorder_windows.html.md
   - models/_webhooks.html.md
 
 search: false
