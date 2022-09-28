@@ -366,7 +366,6 @@ curl -X POST "https://api.orderspace.com/v1/dispatches" \
     "order": {
       "number": 1204,
       "customer_id": "cu_m3xgel1w",
-      "phone": "07911 123456",
       "delivery_date": "2022-09-13",
       "reference": "test reference",
       "internal_note": "test internal note",
