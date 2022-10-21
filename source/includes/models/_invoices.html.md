@@ -402,6 +402,8 @@ Retrieve a list of invoices. Invoices are returned in the order they are created
 
 ## Retrieve an invoice
 
+> Example request with curl
+
 ```shell
 curl -X GET https://api.orderspace.com/v1/invoices/iv_7xg471xv \
   -H "Authorization: Bearer {ACCESS TOKEN}"
