@@ -35,9 +35,7 @@ Welcome to the Orderspace API reference. This document contains everything neede
 
 ## Getting Started
 
-To get started, contact us to enable API Access on your Orderspace site.
-
-Once enabled, add an App from the Apps section of the Orderspace admin to provide access to the API.
+Add an App from the Apps section of the Orderspace admin to provide access to the API.
 
 The Orderspace API supports two types of App, Private and Public.
 
