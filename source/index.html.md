@@ -18,6 +18,7 @@ includes:
   - models/_payment_terms.html.md
   - models/_tax_rates.html.md
   - models/_webhooks.html.md
+  - models/_webhook_events.html.md
 
 search: false
 
