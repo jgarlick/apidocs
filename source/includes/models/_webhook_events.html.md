@@ -188,6 +188,21 @@ Triggered when a customer is updated.
         "order_number": 1289,
         "created": "2021-04-16T12:58:39Z",
         "comments": "Sent by Royal Mail using Next Day Delivery",
+        "customer_note": "",
+        "customer_po_number": "",
+        "shipping_type": "Next Day Delivery",
+        "shipping_address": {
+          "company_name": "Blue Sky",
+          "contact_name": "Emilia Jane Dogherty",
+          "line1": "12 Blue Sky Lane",
+          "line2": "",
+          "city": "Bristol",
+          "state": "",
+          "postal_code": "BS1 2DF",
+          "country": "GB"
+        },
+        "email_address": "sample@orderspace.com",
+        "phone": "12345",
         "dispatch_lines": [
           {
             "order_line_id": "ol_z1ow2pdm",

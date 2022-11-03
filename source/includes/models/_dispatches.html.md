@@ -14,6 +14,21 @@ Dispatches represent items being fulfilled
     "order_number": 1289,
     "created": "2021-04-16T12:58:39Z",
     "comments": "Sent by Royal Mail using Next Day Delivery",
+    "customer_note": "",
+    "customer_po_number": "",
+    "shipping_type": "Next Day Delivery",
+    "shipping_address": {
+      "company_name": "Sample Customer",
+      "contact_name": "",
+      "line1": "34 Edgar Buildings",
+      "line2": "George Street",
+      "city": "Bath",
+      "state": "",
+      "postal_code": "BA1 2FJ",
+      "country": "GB"
+    },
+    "email_address": "sample@orderspace.com",
+    "phone": "07911 123456",
     "dispatch_lines": [
       {
         "order_line_id": "ol_z1ow2pdm", 
@@ -49,6 +64,69 @@ Dispatches represent items being fulfilled
 	<li>
 		<h3><span class="name">comments</span> <span class="type">string</span></h3>
 		<div class="description">Comments to be shown on the delivery note and the dispatch email sent to the customer. This can contain courier details and tracking info, and anything else that the customer needs to know</div>
+	</li>
+	<li>
+		<h3><span class="name">customer_po_number</span> <span class="type">string</span></h3>
+		<div class="description">The customer's purchase order number for the related order</div>
+	</li>
+	<li>
+		<h3><span class="name">customer_note</span> <span class="type">string</span></h3>
+		<div class="description">The customer's note on the related order</div>
+	</li>
+	<li>
+		<h3><span class="name">shipping_type</span> <span class="type">string</span></h3>
+		<div class="description">The name of the shipping option selected for the related order</div>
+	</li>
+	<li>
+		<h3><span class="name">shipping_address</span> <span class="type ha">hash</span></h3>
+		<div class="description">
+			The shipping address for the related order
+			<div class="child-attributes">
+				<h4>Child Attributes</h4>
+				<ul>
+					<li>
+						<h3><span class="parent-name">shipping_address.</span><span class="name">company_name</span> <span class="type">string</span></h3>
+						<div class="description">Company name</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">shipping_address.</span><span class="name">contact_name</span> <span class="type">string</span></h3>
+						<div class="description">Contact name</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">shipping_address.</span><span class="name">line1</span> <span class="type">string</span></h3>
+						<div class="description">Address line 1</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">shipping_address.</span><span class="name">line2</span> <span class="type">string</span></h3>
+						<div class="description">Address line 2</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">shipping_address.</span><span class="name">city</span> <span class="type">string</span></h3>
+						<div class="description">City, town or village</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">shipping_address.</span><span class="name">state</span> <span class="type">string</span></h3>
+						<div class="description">State, county, province or region. U.S., Canadian and Australian addresses should use the abbreviated form of the state</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">shipping_address.</span><span class="name">postal_code</span> <span class="type">string</span></h3>
+						<div class="description">ZIP or postal code</div>
+					</li>
+					<li>
+						<h3><span class="parent-name">shipping_address.</span><span class="name">country</span> <span class="type">string</span></h3>
+						<div class="description">Two-letter ISO 3166-1 country code</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</li>
+	<li>
+		<h3><span class="name">email_address</span> <span class="type">string</span></h3>
+		<div class="description">The customer's email address for the related order</div>
+	</li>
+	<li>
+		<h3><span class="name">phone</span> <span class="type">string</span></h3>
+		<div class="description">The customer's phone number for the related order</div>
 	</li>
 	<li>
 		<h3><span class="name">dispatch_lines</span> <span class="type li">list</span></h3>
@@ -114,6 +192,21 @@ curl -X POST "https://api.orderspace.com/v1/dispatches" \
     "order_number": 1289,
     "created": "2021-04-16T12:58:39Z",
     "comments": "Sent by Royal Mail using Next Day Delivery",
+    "customer_note": "",
+    "customer_po_number": "",
+    "shipping_type": "Next Day Delivery",
+    "shipping_address": {
+      "company_name": "Sample Customer",
+      "contact_name": "",
+      "line1": "34 Edgar Buildings",
+      "line2": "George Street",
+      "city": "Bath",
+      "state": "",
+      "postal_code": "BA1 2FJ",
+      "country": "GB"
+    },
+    "email_address": "sample@orderspace.com",
+    "phone": "07911 123456",
     "dispatch_lines": [
       {
         "order_line_id": "ol_z1ow2pdm", 
@@ -183,6 +276,21 @@ curl -X GET https://api.orderspace.com/v1/dispatches \
       "order_number": 1289,
       "created": "2021-04-16T12:58:39Z",
       "comments": "Sent by Royal Mail using Next Day Delivery",
+      "customer_note": "",
+      "customer_po_number": "",
+      "shipping_type": "Next Day Delivery",
+      "shipping_address": {
+        "company_name": "Sample Customer",
+        "contact_name": "",
+        "line1": "34 Edgar Buildings",
+        "line2": "George Street",
+        "city": "Bath",
+        "state": "",
+        "postal_code": "BA1 2FJ",
+        "country": "GB"
+      },
+      "email_address": "sample@orderspace.com",
+      "phone": "07911 123456",
       "dispatch_lines": [
         {
           "order_line_id": "ol_z1ow2pdm", 
@@ -261,6 +369,21 @@ curl -X GET https://api.orderspace.com/v1/dispaches/di_4kzzxdk2 \
     "order_number": 1289,
     "created": "2021-04-16T12:58:39Z",
     "comments": "Sent by Royal Mail using Next Day Delivery",
+    "customer_note": "",
+    "customer_po_number": "",
+    "shipping_type": "Next Day Delivery",
+    "shipping_address": {
+      "company_name": "Sample Customer",
+      "contact_name": "",
+      "line1": "34 Edgar Buildings",
+      "line2": "George Street",
+      "city": "Bath",
+      "state": "",
+      "postal_code": "BA1 2FJ",
+      "country": "GB"
+    },
+    "email_address": "sample@orderspace.com",
+    "phone": "07911 123456",
     "dispatch_lines": [
       {
         "order_line_id": "ol_z1ow2pdm", 
