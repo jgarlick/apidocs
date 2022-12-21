@@ -1,6 +1,6 @@
 # Dispatches
 
-Dispatches represent items being fulfilled
+A dispatch represents items on an order being fulfilled
 
 ## The Dispatch Object
 
@@ -242,7 +242,9 @@ curl -X POST "https://api.orderspace.com/v1/dispatches" \
 }
 ```
 
-Create a dispatch. This will mark the order lines as dispatched and reduce the stock on hand representing the items leaving your warehouse. The status of the related order will change to <code>fulfilled</code> if all items on the order have been dispatched. A dispatch confirmation email will be sent to the customer if this setting is enabled
+Create a dispatch. This will mark the order lines as dispatched and reduce the stock on hand representing the items leaving your warehouse. The status of the related order will change to <code>fulfilled</code> if all items on the order have been dispatched. A dispatch confirmation email will be sent to the customer if this setting is enabled.
+
+Many of the fields on the dispatch object are read only and can not be set when a dispatch is created. See the example for the fields that can be set. All other fields come from the order and are for reference only.
 
 ### HTTP Request
 
