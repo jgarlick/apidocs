@@ -628,6 +628,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
     "variant_options": ["Color", "Size"],
     "product_variants": [
       {
+        "id": "pv_v18kxq1e",
         "sku": "AD01-RED-10",
         "barcode": "123456789",
         "options": {"Color": "Red", "Size": "10"},
@@ -643,6 +644,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "weight": 0.0,
       },
       {
+        "id": "pv_xjz5xvjk",
         "sku": "AD01-RED-12",
         "barcode": "1123456789",
         "options": {"Color": "Red", "Size": "12"},
@@ -655,6 +657,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "weight": 0.0,
       },
       {
+        "id": "pv_q1l2n634",
         "sku": "AD01-RED-14",
         "barcode": "2123456789",
         "options": {"Color": "Red", "Size": "14"},
@@ -756,7 +759,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
 }
 ```
 
-Update an existing product. Any fields not included in the update will remain the same.
+Update an existing product. We recommend that you include all the fields and all the product variants in your update, not just the ones that are changing. Existing product variants should include their ID which can be obtained by retrieving the product through the API first.
 
 ### HTTP Request
 
