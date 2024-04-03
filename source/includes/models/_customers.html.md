@@ -14,6 +14,7 @@ A customer represents a company placing orders through your Orderspace site
     "created_at": "2021-03-09T13:08:51Z",
     "status": "active",
     "reference": "",
+    "internal_note": "",
     "buyers": [
       {
         "name": "Emilia Jane Dogherty",
@@ -68,6 +69,10 @@ A customer represents a company placing orders through your Orderspace site
 	<li>
 		<h3><span class="name">reference</span> <span class="type">string</span></h3>
 		<div class="description">Your reference for this customer. Visible to the customer but not editable by them</div>
+	</li>
+	<li>
+		<h3><span class="name">internal_note</span> <span class="type">string</span></h3>
+		<div class="description">An internal note for this customer. Not visible to the customer</div>
 	</li>
 	<li>
 		<h3><span class="name">buyers</span> <span class="type li">list</span></h3>
@@ -195,6 +200,7 @@ curl -X POST https://api.orderspace.com/v1/customers \
   "customer": {
     "company_name": "Blue Sky",
     "reference": "",
+    "internal_note": "",
     "buyers": [
       {
         "name": "Emilia Jane Dogherty",
@@ -238,6 +244,7 @@ curl -X POST https://api.orderspace.com/v1/customers \
     "created_at": "2021-03-09T13:08:51Z",
     "status": "active",
     "reference": "",
+    "internal_note": "",
     "buyers": [
       {
         "name": "Emilia Jane Dogherty",
@@ -314,6 +321,7 @@ curl -X GET https://api.orderspace.com/v1/customers \
       "created_at": "2021-03-09T13:08:51Z",
       "status": "active",
       "reference": "",
+      "internal_note": "",
       "buyers": [
         {
           "name": "Emilia Jane Dogherty",
@@ -427,6 +435,7 @@ curl -X GET https://api.orderspace.com/v1/customers/cu_dnwz8gnx \
     "created_at": "2021-03-09T13:08:51Z",
     "status": "active",
     "reference": "",
+    "internal_note": "",
     "buyers": [
       {
         "name": "Emilia Jane Dogherty",
@@ -487,6 +496,7 @@ curl -X PUT https://api.orderspace.com/v1/customers/cu_53zjgvnm \
 		"company_name": "Blue Sky",
 		"status": "active",
 		"reference": "",
+    "internal_note": "",
 		"buyers": [
 			{
 		  	"name": "Emilia Jane Dogherty",
@@ -530,6 +540,7 @@ curl -X PUT https://api.orderspace.com/v1/customers/cu_53zjgvnm \
     "created_at": "2021-03-09T13:08:51Z",
     "status": "active",
     "reference": "",
+    "internal_note": "",
     "buyers": [
       {
         "name": "Emilia Jane Dogherty",
