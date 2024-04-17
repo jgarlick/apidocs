@@ -364,7 +364,6 @@ curl -X POST "https://api.orderspace.com/v1/dispatches" \
   -H "Content-Type: application/json" \
   -d '{
     "order": {
-      "number": 1204,
       "customer_id": "cu_m3xgel1w",
       "delivery_date": "2022-09-13",
       "reference": "test reference",
@@ -521,7 +520,11 @@ curl -X POST "https://api.orderspace.com/v1/dispatches" \
 }
 ```
 
-Create an order.
+Orders must be associated with an existing customer using `customer_id`
+
+If `number` is not provided, an order number will be automatically generated using the next available number. We recommend this approach whenever possible to avoid order number conflicts
+
+Items on `order_lines` are identified using `sku`. Product ID and Product Variant ID are not required. Use `name` instead of `sku` to add a custom item or charge, not connected to a product on the system. Use `name` combined with `"shipping": true` to add a shipping charge.
 
 ### HTTP Request
 
