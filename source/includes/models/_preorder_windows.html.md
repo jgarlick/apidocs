@@ -1,6 +1,6 @@
 # Preorder Windows
 
-Preorder Windows represent a specific season or drop that your customers are buying for. In OrderSpace you can take orders for multiple preorder windows and also sell from stock on the same items at the same time. Preorders allow you to take forward orders on items that have not yet been made. Preordered items are held back and do not reduce stock levels or appear in the Dispatch area for fulfilment until they are released.
+Preorder Windows represent a specific season or drop that customers are buying for. In Orderspace you can take orders for multiple preorder windows and also sell from stock on the same items at the same time. Preorders allow you to take forward orders on items that have not yet been made. Preordered items are held back and do not reduce stock levels or appear in the Dispatch area for fulfilment until they are released.
 
 ## The Preorder Window object
 
