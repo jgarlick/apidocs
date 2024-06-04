@@ -18,7 +18,8 @@
       "orders": "sample@orderspace.com",
       "dispatches": "sample@orderspace.com",
       "invoices": "sample@orderspace.com",
-    }
+    },
+	"created_by": "Sample User",
     "delivery_date": "2020-04-09",
     "reference": "",
     "internal_note": "",
@@ -128,6 +129,10 @@
 				</ul>
 			</div>
 		</div>
+	</li>
+	<li>
+		<h3><span class="name">created_by</span> <span class="type">string</span></h3>
+		<div class="description">The name of the user that created this order</div>
 	</li>
 	<li>
 		<h3><span class="name">delivery_date</span> <span class="type">string</span></h3>
@@ -565,7 +570,8 @@ curl -X GET https://api.orderspace.com/v1/orders \
         "orders": "sample@orderspace.com",
         "dispatches": "sample@orderspace.com",
         "invoices": "sample@orderspace.com",
-      }
+      },
+	  "created_by": "Sample User",
       "delivery_date": "2020-04-09",
       "reference": "",
       "internal_note": "",
@@ -711,7 +717,8 @@ curl -X GET https://api.orderspace.com/v1/orders/or_l5DYqeDn \
       "orders": "sample@orderspace.com",
       "dispatches": "sample@orderspace.com",
       "invoices": "sample@orderspace.com",
-    }
+    },
+	"created_by": "Sample User",
     "delivery_date": "2020-04-09",
     "reference": "",
     "internal_note": "",
