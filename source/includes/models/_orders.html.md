@@ -423,6 +423,7 @@ curl -X POST "https://api.orderspace.com/v1/dispatches" \
       "dispatches": "test_customer1@orderspace.com",
       "invoices": "test_customer1@orderspace.com"
     },
+	"created_by": null,
     "delivery_date": "2022-09-15",
     "reference": "test reference",
     "internal_note": "test internal note",
