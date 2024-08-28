@@ -36,23 +36,23 @@ Welcome to the Orderspace API reference. This document contains everything neede
 
 ## Getting Started
 
-Add an App from the Apps section of the Orderspace admin to provide access to the API.
+Add a Custom Integration from the Integrations section of the Orderspace admin to provide access to the API.
 
-The Orderspace API supports two types of App, Private and Public.
+The Orderspace API supports two types of integration, Private and Public.
 
-### Private Apps
+### Private Integrations
 
-Private Apps are designed for custom integrations with a specific Orderspace site. Authentication is performed by exchanging the app's keys directly for an access token. This kind of app should be used when working directly with a trusted developer on an integration designed specifically for your site.
+Private Integrations are designed for custom integrations with a specific Orderspace site. Authentication is performed by exchanging the integration's keys directly for an access token. This kind of integration should be used when working directly with a trusted developer on an integration designed specifically for your site.
 
-### Public Apps
+### Public Integrations
 
-Public Apps are designed for integrations with third-party products and services where the app can be used by any Orderspace site. Authentication uses OAuth2 Authorization Code grant flow, allowing the admin user of any Orderspace site to authorize the app through the web site.
+Public Integrations are designed for integrations with third-party products and services where the integration can be used by any Orderspace site. Authentication uses OAuth2 Authorization Code grant flow, allowing the admin user of any Orderspace site to authorize the integration through the web site.
 
-Support for public apps is still under development and will be available soon. If you are developing an app for use by multiple Orderspace sites, start off with a Private App and we can upgrade it to a Public App when this feature becomes available.
+If you are developing an integration for use by multiple Orderspace sites, start off with a Private Integration and contact us to have it upgraded to a Public Integration.
 
 ## Request/Response Format
 
-The Orderspace API is organised around REST using predicatable resource-oriented URLS and standard HTTP response codes.
+The Orderspace API is organised around REST using predictable resource-oriented URLS and standard HTTP response codes.
 
 The base URL for all API requests is <code>https://api.orderspace.com/v1/</code>
 
@@ -94,7 +94,7 @@ API requests are limited to a maximum of 60 requests per minute. Clients exceedi
 
 # Authentication
 
-## Private Apps
+## Private Integrations
 
 > Obtain an access token
 
@@ -123,9 +123,9 @@ curl https://api.orderspace.com/v1/customers \
 -H "Authorization: Bearer WUECFd_Z1G02cxcKt2rFOy-Tn-zOAbjrCKUJB5S264U"
 ```
 
-Private Apps are authenticated using the OAuth2 Client Credentials grant flow.
+Private Integrations are authenticated using the OAuth2 Client Credentials grant flow.
 
-To obtain an access token, post the app's Client ID and Client Secret to the identity server. This will return a JSON response with the access token. The token can be used to access the API using an HTTP Authorization header.
+To obtain an access token, post the integration's Client ID and Client Secret to the identity server. This will return a JSON response with the access token. The token can be used to access the API using an HTTP Authorization header.
 
 Access tokens are valid for 30 minutes. They should be stored and used for all requests to the API within the next 30 minutes. When an access token has expired, a new token can be requested by posting the client credentials to the identity server again. If an expired token is used to access the API, an HTTP 401 response will be returned.
 
