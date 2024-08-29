@@ -2,6 +2,8 @@
 
 Products represent items for sale. Products contain product variants which represent a specific version of a product with unique properties, e.g. colors and sizes. Products with no variations contain a single product variant.
 
+Some of the fields on the product object are read only and can not be set when a product is created. See the example for the fields that can be set.
+
 ## The Product Object
 
 > Example product
@@ -71,7 +73,11 @@ Products represent items for sale. Products contain product variants which repre
         "name": "Spring / Summer 2022"
       }
     ],
-    "grouping_category_id": "ca_x61lk8j7"
+    "grouping_category_id": "ca_x61lk8j7",
+    "images": [
+      "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/image_name-8vr0j3wd.jpg",
+      "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/another_image_name-eorkg2nv.png"
+    ]
   }
 }
 ```
@@ -217,6 +223,10 @@ Products represent items for sale. Products contain product variants which repre
 		<h3><span class="name">grouping_category_id</span> <span class="type">string</span></h3>
 		<div class="description">The ID of the category used for grouping on orders. Only shown if "group products on orders" is enabled</div>
 	</li>
+	<li>
+		<h3><span class="name">images</span> <span class="type">list</span></h3>
+		<div class="description">The images associated with this product</div>
+	</li>
 </ul>
 
 ## Create a product
@@ -353,7 +363,8 @@ curl -X POST https://api.orderspace.com/v1/products \
         "name": "Spring / Summer 2022"
       }
     ],
-    "grouping_category_id": "ca_x61lk8j7"
+    "grouping_category_id": "ca_x61lk8j7",
+    "images": []
   }
 }
 ```
@@ -457,7 +468,11 @@ curl -X GET https://api.orderspace.com/v1/products \
           "name": "Spring / Summer 2022"
         }
       ],
-      "grouping_category_id": "ca_x61lk8j7"
+      "grouping_category_id": "ca_x61lk8j7",
+      "images": [
+        "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/image_name-8vr0j3wd.jpg",
+        "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/another_image_name-eorkg2nv.png"
+      ]
     },
   	{...},
   	{...}
@@ -590,7 +605,11 @@ curl -X GET https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "name": "Spring / Summer 2022"
       }
     ],
-    "grouping_category_id": "ca_x61lk8j7"
+    "grouping_category_id": "ca_x61lk8j7",
+    "images": [
+      "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/image_name-8vr0j3wd.jpg",
+      "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/another_image_name-eorkg2nv.png"
+    ]
   }
 }
 ```
@@ -746,7 +765,11 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "name": "Spring / Summer 2022"
       }
     ],
-    "grouping_category_id": "ca_x61lk8j7"
+    "grouping_category_id": "ca_x61lk8j7",
+    "images": [
+      "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/image_name-8vr0j3wd.jpg",
+      "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/another_image_name-eorkg2nv.png"
+    ]
   }
 }
 ```
