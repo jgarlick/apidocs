@@ -116,6 +116,10 @@
 		<div class="description">A string representation of the payment terms offered on this invoice</div>
 	</li>
 	<li>
+		<h3><span class="name">payment_terms_id</span> <span class="type">string</span></h3>
+		<div class="description">The ID of the payment terms to apply when creating an invoice</div>
+	</li>
+	<li>
 		<h3><span class="name">due_date</span> <span class="type">string</span></h3>
 		<div class="description">The date payment is due in ISO 8601 format</div>
 	</li>
@@ -216,6 +220,10 @@
 						<h3><span class="parent-name">invoice_line.</span><span class="name">order_line_id</span> <span class="type number">string</span></h3>
 						<div class="description">The ID of the order line associated with this line</div>
 					</li>
+					<li>
+						<h3><span class="parent-name">invoice_line.</span><span class="name">tax_rate_id</span> <span class="type number">string</span></h3>
+						<div class="description">The ID of a tax rate to apply to the item when creating an invoice</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -265,6 +273,96 @@
 	</li>
 	
 </ul>
+
+## Create an invoice
+
+> Example request with curl
+
+```shell
+curl -X POST "https://api.orderspace.com/v1/dispatches" \
+  -H "Authorization: Bearer {ACCESS TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "invoice": {
+      "number": "INV-1288",
+      "invoice_date": "2021-04-24",
+      "customer_id": "cu_pg34zo1x",
+      "orders": [
+        {
+          "id": "or_e875r5l5"
+        }
+      ],
+      "payment_terms_id": "pt_82my3ew4",
+      "due_date": "2021-05-09",
+      "proforma": false,
+      "comments": "",
+      "address": {
+        "company_name": "BP Twelve",
+        "contact_name": "",
+        "line1": "addr1",
+        "line2": "",
+        "city": "",
+        "state": "",
+        "postal_code": "NN14",
+        "country": "GB"
+      },
+      "invoice_lines": [
+        {
+          "order_line_id": "ol_d16560mn",
+          "quantity": 1
+        },
+        {
+          "sku": "ZAG-D-16",
+          "quantity": 3
+        },
+        {
+          "name": "Custom invoice item",
+          "quantity": 1,
+          "unit_price": 1.23,
+          "tax_rate_id": "tr_p5jvgj81"
+        }
+      ]
+    }
+  }'
+```
+
+> Example HTTP 200 success response
+
+```json-doc
+{
+}
+```
+
+> Example HTTP 422 error response
+
+```json-doc
+{
+  "message": "invoice_lines[0] SKU 'ZAG-D-16' matches more than one order line"
+}
+```
+
+Invoices must be associated with an existing customer using `customer_id`
+
+Invoices must be associated with one or more orders for the specified customer. Orders must have the same currency
+
+If `number` is not provided, an invoice number will be automatically generated using the next available number. We recommend this approach whenever possible to avoid invoice number conflicts
+
+Payment terms can be specified using `payment_terms_id`. Use `due_date` instead of `payment_terms_id` to only set the due date of the invoice
+
+Items on `invoice_lines` are identified using `order_line_id` or `sku`. Always use `order_line_id` if multiple order lines exist with the same SKU. Use `name` combined with `quantity`, `unit_price` and `tax_rate_id` (if applicable) to add a custom item or charge, not connected to an order line on the system
+
+Where `invoice_lines` is not included in the request, all outstanding items for all order lines from all specified orders will be added to the invoice
+
+### HTTP Request
+
+<code>POST https://api.orderspace.com/v1/orders</code>
+
+### Response
+
+`HTTP 200 Success` - The order object in JSON format
+
+`HTTP 422 Unprocessable Entity` - A message describing the errors
+
 
 ## List invoices
 
