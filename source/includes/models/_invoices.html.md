@@ -211,6 +211,10 @@
 						<h3><span class="parent-name">invoice_line.</span><span class="name">tax_amount</span> <span class="type number">number</span></h3>
 						<div class="description">The total tax applied to this line</div>
 					</li>				
+					<li>
+						<h3><span class="parent-name">invoice_line.</span><span class="name">order_line_id</span> <span class="type number">string</span></h3>
+						<div class="description">The ID of the order line associated with this line</div>
+					</li>
 				</ul>
 			</div>
 		</div>
