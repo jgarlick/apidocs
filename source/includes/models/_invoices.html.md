@@ -47,7 +47,8 @@
         "unit_price": 22.25,
         "sub_total": 22.25,
         "tax_rate": 20.0,
-        "tax_amount": 4.45
+        "tax_amount": 4.45,
+		"order_line_id": "ol_d16560mn"
       }
     ],
     "currency": "GBP",
@@ -322,7 +323,8 @@ curl -X GET https://api.orderspace.com/v1/invoices \
           "unit_price": 22.25,
           "sub_total": 22.25,
           "tax_rate": 20.0,
-          "tax_amount": 4.45
+          "tax_amount": 4.45,
+          "order_line_id": "ol_d16560mn"
         }
       ],
       "currency": "GBP",
@@ -458,7 +460,8 @@ curl -X GET https://api.orderspace.com/v1/invoices/iv_7xg471xv \
         "unit_price": 22.25,
         "sub_total": 22.25,
         "tax_rate": 20.0,
-        "tax_amount": 4.45
+        "tax_amount": 4.45,
+		"order_line_id": "ol_d16560mn"
       }
     ],
     "currency": "GBP",
