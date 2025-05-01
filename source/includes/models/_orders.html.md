@@ -788,3 +788,36 @@ Retrieve a single order by ID
 
 `HTTP 404 Not Found` - A message describing the error
 
+
+## Delete an order
+
+> Example request with curl
+
+```shell
+curl -X DELETE https://api.orderspace.com/v1/orders/or_l5DYqeDn \
+  -H "Authorization: Bearer {ACCESS TOKEN}"
+```
+
+> Example success response [HTTP 200 Success]
+
+```json-doc
+{
+  "order": {
+      "id": "or_l5DYqeDn",
+      "deleted": true
+    }
+}
+```
+
+Delete an order.
+
+### HTTP Request
+
+`DELETE https://api.orderspace.com/v1/orders/:order_id`
+
+### Response
+
+`HTTP 200 Success` - A short representation of the order in JSON format
+
+`HTTP 404 Success` - A message describing the error
+

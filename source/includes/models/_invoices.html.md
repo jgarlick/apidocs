@@ -640,3 +640,37 @@ Retrieve a single invoice by ID
 
 `HTTP 404 Not Found` - A message describing the error
 
+
+
+## Delete an invoice
+
+> Example request with curl
+
+```shell
+curl -X DELETE https://api.orderspace.com/v1/invoices/iv_7xg471xv \
+  -H "Authorization: Bearer {ACCESS TOKEN}"
+```
+
+> Example success response [HTTP 200 Success]
+
+```json-doc
+{
+  "invoice": {
+      "id": "iv_7xg471xv",
+      "deleted": true
+    }
+}
+```
+
+Delete an invoice.
+
+### HTTP Request
+
+`DELETE https://api.orderspace.com/v1/invoices/:invoice_id`
+
+### Response
+
+`HTTP 200 Success` - A short representation of the invoice in JSON format
+
+`HTTP 404 Success` - A message describing the error
+

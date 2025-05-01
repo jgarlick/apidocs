@@ -101,3 +101,36 @@ Retrieve a list of categories. Categories are returned based on their sort order
 
 `HTTP 200 Success` - A list of categories in JSON format
 
+
+## Delete a category
+
+> Example request with curl
+
+```shell
+curl -X DELETE https://api.orderspace.com/v1/categories/ca_n51qpxjd \
+  -H "Authorization: Bearer {ACCESS TOKEN}"
+```
+
+> Example success response [HTTP 200 Success]
+
+```json-doc
+{
+  "category": {
+      "id": "ca_n51qpxjd",
+      "deleted": true
+    }
+}
+```
+
+Delete a category.
+
+### HTTP Request
+
+`DELETE https://api.orderspace.com/v1/categories/:category_id`
+
+### Response
+
+`HTTP 200 Success` - A short representation of the category in JSON format
+
+`HTTP 404 Success` - A message describing the error
+
