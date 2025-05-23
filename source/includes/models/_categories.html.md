@@ -16,6 +16,7 @@ Categories are used to group related products together
     "parent_id": null,
     "products": [
       {"product_id": "pr_r9x2mk1g", "product_name": "Alexa Dress"},
+      {"product_id": "pr_2rjlgp16", "product_name": "T-Shirt"}
     ]
   }
 }
@@ -150,7 +151,11 @@ curl https://api.orderspace.com/v1/categories \
       "name": "Dresses",
       "description": "",
       "active": true,
-      "parent_id": null
+      "parent_id": null,
+      "products": [
+        {"product_id": "pr_r9x2mk1g", "product_name": "Alexa Dress"},
+        {"product_id": "pr_2rjlgp16", "product_name": "T-Shirt"}
+      ]
     },
     {...},
     {...}
