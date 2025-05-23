@@ -190,6 +190,7 @@ Retrieve a list of categories. Categories are returned based on their sort order
 `HTTP 200 Success` - A list of categories in JSON format
 
 
+
 ## Retrieve a category
 
 > Example request with curl
@@ -296,3 +297,37 @@ Update an existing category. Any fields not included in the update will remain t
 `HTTP 200 Success` - The category object in JSON format
 
 `HTTP 422 Unprocessable Entity` - A message describing the errors
+
+
+## Delete a category
+
+> Example request with curl
+
+```shell
+curl -X DELETE https://api.orderspace.com/v1/categories/ca_n51qpxjd \
+  -H "Authorization: Bearer {ACCESS TOKEN}"
+```
+
+> Example success response [HTTP 200 Success]
+
+```json-doc
+{
+  "category": {
+      "id": "ca_n51qpxjd",
+      "deleted": true
+    }
+}
+```
+
+Delete a category.
+
+### HTTP Request
+
+`DELETE https://api.orderspace.com/v1/categories/:category_id`
+
+### Response
+
+`HTTP 200 Success` - A short representation of the category in JSON format
+
+`HTTP 404 Success` - A message describing the error
+

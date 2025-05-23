@@ -595,3 +595,37 @@ Update an existing customer. Any fields not included in the update will remain t
 `HTTP 200 Success` - The customer object in JSON format
 
 `HTTP 422 Unprocessable Entity` - A message describing the errors
+
+
+## Delete a customer
+
+> Example request with curl
+
+```shell
+curl -X DELETE https://api.orderspace.com/v1/customers/cu_dnwz8gnx \
+  -H "Authorization: Bearer {ACCESS TOKEN}"
+```
+
+> Example success response [HTTP 200 Success]
+
+```json-doc
+{
+  "customer": {
+      "id": "cu_dnwz8gnx",
+      "deleted": true
+    }
+}
+```
+
+Delete a customer.
+
+### HTTP Request
+
+`DELETE https://api.orderspace.com/v1/customers/:customer_id`
+
+### Response
+
+`HTTP 200 Success` - A short representation of the customer in JSON format
+
+`HTTP 404 Success` - A message describing the error
+

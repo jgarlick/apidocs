@@ -796,3 +796,36 @@ Update an existing product. We recommend that you include all the fields and all
 `HTTP 422 Unprocessable Entity` - A message describing the errors
 
 
+
+## Delete a product
+
+> Example request with curl
+
+```shell
+curl -X DELETE https://api.orderspace.com/v1/products/pr_lj3pwm1n \
+  -H "Authorization: Bearer {ACCESS TOKEN}"
+```
+
+> Example success response [HTTP 200 Success]
+
+```json-doc
+{
+  "product": {
+      "id": "pr_lj3pwm1n",
+      "deleted": true
+    }
+}
+```
+
+Delete a product.
+
+### HTTP Request
+
+`DELETE https://api.orderspace.com/v1/products/:product_id`
+
+### Response
+
+`HTTP 200 Success` - A short representation of the product in JSON format
+
+`HTTP 404 Success` - A message describing the error
+
