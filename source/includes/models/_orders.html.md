@@ -364,7 +364,7 @@
 > Example request with curl
 
 ```shell
-curl -X POST "https://api.orderspace.com/v1/dispatches" \
+curl -X POST "https://api.orderspace.com/v1/orders" \
   -H "Authorization: Bearer {ACCESS TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
