@@ -405,7 +405,7 @@ Where `invoice_lines` is not included in the request, all outstanding items for 
 
 ### HTTP Request
 
-<code>POST https://api.orderspace.com/v1/orders</code>
+<code>POST https://api.orderspace.com/v1/invoices</code>
 
 ### Response
 
