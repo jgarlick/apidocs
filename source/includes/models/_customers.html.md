@@ -11,7 +11,7 @@ A customer represents a company placing orders through your Orderspace site
   "customer": {
     "id": "cu_dnwz8gnx",
     "company_name": "Blue Sky",
-    "created_at": "2021-03-09T13:08:51Z",
+    "created": "2021-03-09T13:08:51Z",
     "status": "active",
     "reference": "",
     "internal_note": "",
@@ -59,7 +59,7 @@ A customer represents a company placing orders through your Orderspace site
 		<div class="description">The customer's company name</div>
 	</li>
 	<li>
-		<h3><span class="name">created_at</span> <span class="type">string</span></h3>
+		<h3><span class="name">created</span> <span class="type">string</span></h3>
 		<div class="description">The UTC date and time the customer was created in ISO 8601 format</div>
 	</li>
 	<li>
@@ -241,7 +241,7 @@ curl -X POST https://api.orderspace.com/v1/customers \
   "customer": {
     "id": "cu_dnwz8gnx",
     "company_name": "Blue Sky",
-    "created_at": "2021-03-09T13:08:51Z",
+    "created": "2021-03-09T13:08:51Z",
     "status": "active",
     "reference": "",
     "internal_note": "",
@@ -318,7 +318,7 @@ curl -X GET https://api.orderspace.com/v1/customers \
     {
       "id": "cu_dnwz8gnx",
       "company_name": "Blue Sky",
-      "created_at": "2021-03-09T13:08:51Z",
+      "created": "2021-03-09T13:08:51Z",
       "status": "active",
       "reference": "",
       "internal_note": "",
@@ -432,7 +432,7 @@ curl -X GET https://api.orderspace.com/v1/customers/cu_dnwz8gnx \
   "customer": {
     "id": "cu_dnwz8gnx",
     "company_name": "Blue Sky",
-    "created_at": "2021-03-09T13:08:51Z",
+    "created": "2021-03-09T13:08:51Z",
     "status": "active",
     "reference": "",
     "internal_note": "",
@@ -537,7 +537,7 @@ curl -X PUT https://api.orderspace.com/v1/customers/cu_53zjgvnm \
   "customer": {
     "id": "cu_dnwz8gnx",
     "company_name": "Blue Sky",
-    "created_at": "2021-03-09T13:08:51Z",
+    "created": "2021-03-09T13:08:51Z",
     "status": "active",
     "reference": "",
     "internal_note": "",

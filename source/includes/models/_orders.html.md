@@ -397,7 +397,7 @@ curl -X POST "https://api.orderspace.com/v1/orders" \
       },
       "order_lines": [
         { "sku": "TC01-BLU-S", "quantity": 9 },
-        { "name": "Custom Item Name", quantity: 10, unit_price: 2.00, tax_rate_id: "tr_ruo96bhf" },
+        { "name": "Custom Item Name", "quantity": 10, "unit_price": 2.00, "tax_rate_id": "tr_ruo96bhf" },
         { "name": "Special Delivery", "unit_price": 4.9, "shipping": true },
         {...},
         {...}
