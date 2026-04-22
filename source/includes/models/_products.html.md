@@ -35,6 +35,7 @@ Some of the fields on the product object are read only and can not be set when a
         "minimum": 4,
         "multiple": 3,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_xjz5xvjk",
@@ -48,6 +49,7 @@ Some of the fields on the product object are read only and can not be set when a
         "minimum": 2,
         "multiple": 2,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_q1l2n634",
@@ -61,6 +63,7 @@ Some of the fields on the product object are read only and can not be set when a
         "minimum": 4,
         "multiple": null,
         "weight": 1.0,
+        "image": "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/another_image_name-eorkg2nv.png"
       }
     ],
     "categories": [
@@ -198,6 +201,10 @@ Some of the fields on the product object are read only and can not be set when a
 						<h3><span class="name">location</span> <span class="type">string</span></h3>
 						<div class="description">A string representing the location of this item in the warehouse, used for picking. This field is only present if the stock locations feature is enabled</div>
 					</li>
+					<li>
+						<h3><span class="name">image</span> <span class="type">string</span></h3>
+						<div class="description">The image associated with this product variant.</div>
+					</li>
 				</ul>
 		</div>
 	</li>
@@ -273,6 +280,7 @@ curl -X POST https://api.orderspace.com/v1/products \
         "minimum": 2,
         "multiple": 2,
         "weight": 0.0,
+        "image": null
       },
       {
         "sku": "AD01-RED-14",
@@ -285,13 +293,18 @@ curl -X POST https://api.orderspace.com/v1/products \
         "minimum": 4,
         "multiple": null,
         "weight": 1.0,
+        "image": "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/third_image_name-forg67ab.png"
       }
     ],
     "categories": [
       {"id": "ca_x61lk8j7"},
       {"id": "ca_3xwy7mwo"}
     ],
-    "grouping_category_id": "ca_x61lk8j7"
+    "grouping_category_id": "ca_x61lk8j7",
+    "images": [
+      "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/image_name-8vr0j3wd.jpg",
+      "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/another_image_name-eorkg2nv.png"
+    ]
   }
 }'
 ```
@@ -325,6 +338,7 @@ curl -X POST https://api.orderspace.com/v1/products \
         "minimum": 4,
         "multiple": 3,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_xjz5xvjk",
@@ -338,6 +352,7 @@ curl -X POST https://api.orderspace.com/v1/products \
         "minimum": 2,
         "multiple": 2,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_q1l2n634",
@@ -351,6 +366,7 @@ curl -X POST https://api.orderspace.com/v1/products \
         "minimum": 4,
         "multiple": null,
         "weight": 1.0,
+        "image": null
       }
     ],
     "categories": [
@@ -377,7 +393,9 @@ curl -X POST https://api.orderspace.com/v1/products \
 }
 ```
 
-Create a new product
+New images in the request will not appear in the product create response. They are processed in the background and will be shown on the product as CDN URLs for the processed images once processing is complete.
+
+Image on `product_variants` will add the image to the product images if the URL doesn't match an existing image
 
 ### HTTP Request
 
@@ -430,6 +448,7 @@ curl -X GET https://api.orderspace.com/v1/products \
           "minimum": 4,
           "multiple": 3,
           "weight": 0.0,
+          "image": null
         },
         {
           "id": "pv_xjz5xvjk",
@@ -443,6 +462,7 @@ curl -X GET https://api.orderspace.com/v1/products \
           "minimum": 2,
           "multiple": 2,
           "weight": 0.0,
+          "image": null
         },
         {
           "id": "pv_q1l2n634",
@@ -456,6 +476,7 @@ curl -X GET https://api.orderspace.com/v1/products \
           "minimum": 4,
           "multiple": null,
           "weight": 1.0,
+          "image": null
         }
       ],
       "categories": [
@@ -567,6 +588,7 @@ curl -X GET https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "minimum": 4,
         "multiple": 3,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_xjz5xvjk",
@@ -580,6 +602,7 @@ curl -X GET https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "minimum": 2,
         "multiple": 2,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_q1l2n634",
@@ -593,6 +616,7 @@ curl -X GET https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "minimum": 4,
         "multiple": null,
         "weight": 1.0,
+        "image": null
       }
     ],
     "categories": [
@@ -660,7 +684,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "backorder": true,
         "minimum": 4,
         "multiple": 3,
-        "weight": 0.0,
+        "weight": 0.0
       },
       {
         "id": "pv_xjz5xvjk",
@@ -674,6 +698,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "minimum": 2,
         "multiple": 2,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_q1l2n634",
@@ -687,6 +712,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "minimum": 4,
         "multiple": null,
         "weight": 1.0,
+        "image": "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/another_image_name-eorkg2nv.png"
       }
     ],
     "categories": [
@@ -727,6 +753,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "minimum": 4,
         "multiple": 3,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_xjz5xvjk",
@@ -740,6 +767,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "minimum": 2,
         "multiple": 2,
         "weight": 0.0,
+        "image": null
       },
       {
         "id": "pv_q1l2n634",
@@ -753,6 +781,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
         "minimum": 4,
         "multiple": null,
         "weight": 1.0,
+        "image": "https://a1b2c3d4ef.cloudfront.net/accountname/images/products/another_image_name-eorkg2nv.png"
       }
     ],
     "categories": [
@@ -783,6 +812,14 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
 ```
 
 Update an existing product. We recommend that you include all the fields and all the product variants in your update, not just the ones that are changing. Existing product variants should include their ID which can be obtained by retrieving the product through the API first.
+
+New images in the request will not appear in the product update response. They are processed in the background and will be shown on the product as CDN URLs for the processed images once processing is complete.
+
+Removing images from images does nothing.
+
+Image on `product_variants` will add the image to the product images if the URL or image content doesn't match an existing image.
+
+Removing image from `product_variants` or setting it to null will remove the association. The image will remain part of the product images.
 
 ### HTTP Request
 
