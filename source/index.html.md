@@ -48,7 +48,7 @@ Private Integrations are designed for custom integrations with a specific Orders
 
 Public Integrations are designed for integrations with third-party products and services where the integration can be used by any Orderspace site. Authentication uses OAuth2 Authorization Code grant flow, allowing the admin user of any Orderspace site to authorize the integration through the web site.
 
-If you are developing an integration for use by multiple Orderspace sites, start off with a Private Integration and contact us to have it upgraded to a Public Integration.
+If you are developing an integration for use by multiple Orderspace sites, start with a Private Integration and contact us to have it upgraded to a Public Integration.
 
 ## Request/Response Format
 

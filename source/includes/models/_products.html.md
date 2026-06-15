@@ -203,7 +203,7 @@ Some of the fields on the product object are read only and can not be set when a
 					</li>
 					<li>
 						<h3><span class="name">image</span> <span class="type">string</span></h3>
-						<div class="description">The image associated with this product variant.</div>
+						<div class="description">The URL of the image associated with this specific product variant. If blank, the variant will use the first image on the product</div>
 					</li>
 				</ul>
 		</div>
@@ -232,7 +232,7 @@ Some of the fields on the product object are read only and can not be set when a
 	</li>
 	<li>
 		<h3><span class="name">images</span> <span class="type">list</span></h3>
-		<div class="description">The images associated with this product</div>
+		<div class="description">A list of URLs of the images associated with this product</div>
 	</li>
 </ul>
 
@@ -393,9 +393,11 @@ curl -X POST https://api.orderspace.com/v1/products \
 }
 ```
 
-New images in the request will not appear in the product create response. They are processed in the background and will be shown on the product as CDN URLs for the processed images once processing is complete.
+Create a new product.
 
-Image on `product_variants` will add the image to the product images if the URL doesn't match an existing image
+If `images` contains external image URLs, they will be imported and added to the product. The URLs for the imported images will not appear in the initial response, as they are imported and processed in the background after the product has been created.
+
+An image URL on `product_variant.image` will associate the image with the specific variant. If the image is an external URL it will be imported and added to the list of images on the product.
 
 ### HTTP Request
 
@@ -813,13 +815,12 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
 
 Update an existing product. We recommend that you include all the fields and all the product variants in your update, not just the ones that are changing. Existing product variants should include their ID which can be obtained by retrieving the product through the API first.
 
-New images in the request will not appear in the product update response. They are processed in the background and will be shown on the product as CDN URLs for the processed images once processing is complete.
+If `images` contains external image URLs, they will be imported and added to the product. The URLs for the imported images will not appear in the initial response, as they are imported and processed in the background after the product has been updated.
 
-Removing images from images does nothing.
+URLs of existing images in the `images` list will be ignored and not imported again.
 
-Image on `product_variants` will add the image to the product images if the URL or image content doesn't match an existing image.
+An image URL on `product_variant.image` will associate the image with the specific variant. If the image is an external URL it will be imported and added to the list of images on the product.
 
-Removing image from `product_variants` or setting it to null will remove the association. The image will remain part of the product images.
 
 ### HTTP Request
 
