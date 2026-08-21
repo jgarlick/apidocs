@@ -44,7 +44,9 @@ A customer represents a company placing orders through your Orderspace site
     "minimum_spend": 150.0,
     "payment_terms_id": "pt_zkmqv8e0",
     "customer_group_id": "cg_w2n6ln8v",
-    "price_list_id": "pr_3715yj58"
+    "price_list_id": "pr_3715yj58",
+    "last_seen": "2025-04-10",
+    "last_order": "2025-04-30"
   }
 }
 ```
@@ -186,6 +188,14 @@ A customer represents a company placing orders through your Orderspace site
 		<h3><span class="name">price_list_id</span> <span class="type">string</span></h3>
 		<div class="description">The ID of the Price List assigned to this customer. Set to <code>null</code> if no Price List is assigned</div>
 	</li>
+	<li>
+		<h3><span class="name">last_seen</span> <span class="type">string</span></h3>
+		<div class="description">The date the customer was last seen by Orderspace in ISO 8601 format. Set to <code>null</code> if the customer has never logged in</div>
+	</li>
+	<li>
+		<h3><span class="name">last_order</span> <span class="type">string</span></h3>
+		<div class="description">The date the customer last placed an order in ISO 8601 format. Set to <code>null</code> if the customer has never placed an order</div>
+	</li>
 </ul>
 
 ## Create a customer
@@ -275,6 +285,8 @@ curl -X POST https://api.orderspace.com/v1/customers \
     "payment_terms_id": "pt_zkmqv8e0",
     "customer_group_id": "cg_w2n6ln8v",
     "price_list_id": "pr_3715yj58"
+    "last_seen": null,
+    "last_order": null
   }
 }
 ```
@@ -351,7 +363,9 @@ curl -X GET https://api.orderspace.com/v1/customers \
       "minimum_spend": 150.0,
       "payment_terms_id": "pt_zkmqv8e0",
       "customer_group_id": "cg_w2n6ln8v",
-      "price_list_id": "pr_3715yj58"
+      "price_list_id": "pr_3715yj58",
+      "last_seen": "2025-04-10",
+      "last_order": "2025-04-30"
     },
     {...},
     {...}
@@ -465,7 +479,9 @@ curl -X GET https://api.orderspace.com/v1/customers/cu_dnwz8gnx \
     "minimum_spend": 150.0,
     "payment_terms_id": "pt_zkmqv8e0",
     "customer_group_id": "cg_w2n6ln8v",
-    "price_list_id": "pr_3715yj58"
+    "price_list_id": "pr_3715yj58",
+    "last_seen": "2025-04-10",
+    "last_order": "2025-04-30"
   }
 }
 ```
@@ -570,7 +586,9 @@ curl -X PUT https://api.orderspace.com/v1/customers/cu_53zjgvnm \
     "minimum_spend": 150.0,
     "payment_terms_id": "pt_zkmqv8e0",
     "customer_group_id": "cg_w2n6ln8v",
-    "price_list_id": "pr_3715yj58"
+    "price_list_id": "pr_3715yj58",
+    "last_seen": "2025-04-10",
+    "last_order": "2025-04-30"
   }
 }
 ```
