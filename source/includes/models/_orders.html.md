@@ -532,6 +532,8 @@ If `number` is not provided, an order number will be automatically generated usi
 
 Items on `order_lines` are identified using `sku`. Product ID and Product Variant ID are not required. Use `name` instead of `sku` to add a custom item or charge, not connected to a product on the system. Use `name` combined with `"shipping": true` to add a shipping charge.
 
+If the `shipping_address` or `billing_address` blocks are not present, the order will use the customer's default addresses.
+
 ### HTTP Request
 
 <code>POST https://api.orderspace.com/v1/orders</code>
