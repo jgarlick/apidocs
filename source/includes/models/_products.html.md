@@ -19,11 +19,13 @@ Some of the fields on the product object are read only and can not be set when a
     "tariff_code": "0804.401",
     "country_of_origin": "India",
     "composition": "100% cotton",
+    "quantity_precision": 0,
     "variant_options": ["Color", "Size"],
     "product_variants": [
       {
         "id": "pv_v18kxq1e",
         "sku": "AD01-10",
+        "enabled": true,
         "barcode": "123456789",
         "options": {"Color": "Red", "Size": "10"},
         "unit_price": 32.0,
@@ -40,6 +42,7 @@ Some of the fields on the product object are read only and can not be set when a
       {
         "id": "pv_xjz5xvjk",
         "sku": "AD01-12",
+        "enabled": true,
         "barcode": "1123456789",
         "options": {"Color": "Red", "Size": "12"},
         "unit_price": 32.0,
@@ -54,6 +57,7 @@ Some of the fields on the product object are read only and can not be set when a
       {
         "id": "pv_q1l2n634",
         "sku": "AD01-14",
+        "enabled": true,
         "barcode": "2123456789",
         "options": {"Color": "Red", "Size": "14"},
         "unit_price": 32.0,
@@ -123,6 +127,10 @@ Some of the fields on the product object are read only and can not be set when a
 		<div class="description">The composition of the product for commercial invoices. Set to null to use the default composition. Only visible if the commercial invoices feature is enabled</div>
 	</li>
 	<li>
+		<h3><span class="name">quantity_precision</span> <span class="type number">number</span></h3>
+		<div class="description">Allow items to be ordered in fractional quantities to one, two, or three decimal places, such as items sold by weight. Only visible if the decimal quantities feature is enabled</div>
+	</li>
+	<li>
 		<h3><span class="name">variant_options</span> <span class="type li">list</span></h3>
 		<div class="description">A list of the ways in which the product varies (Color, Size etc). Products can have zero, one, two or three variant options. The order of the options in the list is significant as this controls how the products are displayed on ordering tables. The order should be the same throughout your products so that ordering tables are consistent. For example, if products vary by Color and Size, always list Color first and Size second.
 	</li>
@@ -140,6 +148,10 @@ Some of the fields on the product object are read only and can not be set when a
 					<li>
 						<h3><span class="name">sku</span> <span class="type">string</span></h3>
 						<div class="description">A unique code to represent the product variant. Often this is a combination of the product code and a suffix representing the unique variant, for example AD01-RED-S to represent product code AD01 with color red and size small.</div>
+					</li>
+					<li>
+						<h3><span class="name">enabled</span> <span class="type">string</span></h3>
+						<div class="description">Controls the visibility of the variant to customers</div>
 					</li>
 					<li>
 						<h3><span class="name">barcode</span> <span class="type">string</span></h3>
@@ -257,6 +269,7 @@ curl -X POST https://api.orderspace.com/v1/products \
     "product_variants": [
       {
         "sku": "AD01-RED-10",
+        "enabled": true,
         "barcode": "123456789",
         "options": {"Color": "Red", "Size": "10"},
         "unit_price": 32.0,
@@ -271,6 +284,7 @@ curl -X POST https://api.orderspace.com/v1/products \
       },
       {
         "sku": "AD01-RED-12",
+        "enabled": true,
         "barcode": "1123456789",
         "options": {"Color": "Red", "Size": "12"},
         "unit_price": 32.0,
@@ -284,6 +298,7 @@ curl -X POST https://api.orderspace.com/v1/products \
       },
       {
         "sku": "AD01-RED-14",
+        "enabled": true,
         "barcode": "2123456789",
         "options": {"Color": "Red", "Size": "14"},
         "unit_price": 32.0,
@@ -327,6 +342,7 @@ curl -X POST https://api.orderspace.com/v1/products \
       {
         "id": "pv_v18kxq1e",
         "sku": "AD01-10",
+        "enabled": true,
         "barcode": "123456789",
         "options": {"Color": "Red", "Size": "10"},
         "unit_price": 32.0,
@@ -343,6 +359,7 @@ curl -X POST https://api.orderspace.com/v1/products \
       {
         "id": "pv_xjz5xvjk",
         "sku": "AD01-12",
+        "enabled": true,
         "barcode": "1123456789",
         "options": {"Color": "Red", "Size": "12"},
         "unit_price": 32.0,
@@ -357,6 +374,7 @@ curl -X POST https://api.orderspace.com/v1/products \
       {
         "id": "pv_q1l2n634",
         "sku": "AD01-14",
+        "enabled": true,
         "barcode": "2123456789",
         "options": {"Color": "Red", "Size": "14"},
         "unit_price": 32.0,
@@ -439,6 +457,7 @@ curl -X GET https://api.orderspace.com/v1/products \
         {
           "id": "pv_v18kxq1e",
           "sku": "AD01-10",
+          "enabled": true,
           "barcode": "123456789",
           "options": {"Color": "Red", "Size": "10"},
           "unit_price": 32.0,
@@ -455,6 +474,7 @@ curl -X GET https://api.orderspace.com/v1/products \
         {
           "id": "pv_xjz5xvjk",
           "sku": "AD01-12",
+          "enabled": true,
           "barcode": "1123456789",
           "options": {"Color": "Red", "Size": "12"},
           "unit_price": 32.0,
@@ -469,6 +489,7 @@ curl -X GET https://api.orderspace.com/v1/products \
         {
           "id": "pv_q1l2n634",
           "sku": "AD01-14",
+          "enabled": true,
           "barcode": "2123456789",
           "options": {"Color": "Red", "Size": "14"},
           "unit_price": 32.0,
@@ -579,6 +600,7 @@ curl -X GET https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_v18kxq1e",
         "sku": "AD01-10",
+        "enabled": true,
         "barcode": "123456789",
         "options": {"Color": "Red", "Size": "10"},
         "unit_price": 32.0,
@@ -595,6 +617,7 @@ curl -X GET https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_xjz5xvjk",
         "sku": "AD01-12",
+        "enabled": true,
         "barcode": "1123456789",
         "options": {"Color": "Red", "Size": "12"},
         "unit_price": 32.0,
@@ -609,6 +632,7 @@ curl -X GET https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_q1l2n634",
         "sku": "AD01-14",
+        "enabled": true,
         "barcode": "2123456789",
         "options": {"Color": "Red", "Size": "14"},
         "unit_price": 32.0,
@@ -675,6 +699,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_v18kxq1e",
         "sku": "AD01-RED-10",
+        "enabled": true,
         "barcode": "123456789",
         "options": {"Color": "Red", "Size": "10"},
         "unit_price": 32.0,
@@ -691,6 +716,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_xjz5xvjk",
         "sku": "AD01-RED-12",
+        "enabled": true,
         "barcode": "1123456789",
         "options": {"Color": "Red", "Size": "12"},
         "unit_price": 32.0,
@@ -705,6 +731,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_q1l2n634",
         "sku": "AD01-RED-14",
+        "enabled": true,
         "barcode": "2123456789",
         "options": {"Color": "Red", "Size": "14"},
         "unit_price": 32.0,
@@ -744,6 +771,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_v18kxq1e",
         "sku": "AD01-10",
+        "enabled": true,
         "barcode": "123456789",
         "options": {"Color": "Red", "Size": "10"},
         "unit_price": 32.0,
@@ -760,6 +788,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_xjz5xvjk",
         "sku": "AD01-12",
+        "enabled": true,
         "barcode": "1123456789",
         "options": {"Color": "Red", "Size": "12"},
         "unit_price": 32.0,
@@ -774,6 +803,7 @@ curl -X PUT https://api.orderspace.com/v1/products/pr_lj3pwm1n \
       {
         "id": "pv_q1l2n634",
         "sku": "AD01-14",
+        "enabled": true,
         "barcode": "2123456789",
         "options": {"Color": "Red", "Size": "14"},
         "unit_price": 32.0,
