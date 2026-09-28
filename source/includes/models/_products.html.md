@@ -128,7 +128,7 @@ Some of the fields on the product object are read only and can not be set when a
 	</li>
 	<li>
 		<h3><span class="name">quantity_precision</span> <span class="type number">number</span></h3>
-		<div class="description">Allow items to be ordered in fractional quantities to one, two, or three decimal places, such as items sold by weight. Only visible if the decimal quantities feature is enabled</div>
+		<div class="description">The number of decimal places that this product can be ordered in. Either 0, 1, 2 or 3. Defaults to 0 (whole numbers). Only visible if the decimal quantities feature is enabled</div>
 	</li>
 	<li>
 		<h3><span class="name">variant_options</span> <span class="type li">list</span></h3>
@@ -151,7 +151,7 @@ Some of the fields on the product object are read only and can not be set when a
 					</li>
 					<li>
 						<h3><span class="name">enabled</span> <span class="type">string</span></h3>
-						<div class="description">Controls the visibility of the variant to customers</div>
+						<div class="description">Controls whether the variant is enabled and visible to customers for ordering</div>
 					</li>
 					<li>
 						<h3><span class="name">barcode</span> <span class="type">string</span></h3>
